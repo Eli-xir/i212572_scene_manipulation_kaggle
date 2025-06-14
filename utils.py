@@ -1,8 +1,6 @@
 import spacy
 
-nlp = spacy.load("en_core_web_sm")
-
-def parse_instruction(instruction: str) -> dict:
+def parse_instruction(nlp,instruction: str) -> dict:
     doc = nlp(instruction.lower())
 
     action_details = {
