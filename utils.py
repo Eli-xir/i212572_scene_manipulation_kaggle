@@ -102,7 +102,7 @@ def load_images(image_sources):
         images.append(img)
     return images
 
-def get_yolo_detections(image: Image.Image, target_classes=None, conf_threshold=0.5,yolo = YOLO('yolo8n.pt')):
+def get_yolo_detections(image: Image.Image, target_classes=None, conf_threshold=0.5,yolo = None):
     """
     Get YOLO detections for an image.
     Args:
@@ -168,7 +168,7 @@ def segment_objects(image: Image.Image, detections,predictor = None):
     
     return results
 
-def process_images(image_sources, target_classes=None, conf_threshold=0.5,predictor = None,yolo = YOLO('yolo8n.pt')):
+def process_images(image_sources, target_classes=None, conf_threshold=0.5,predictor = None,yolo = None):
     """
     Full pipeline: load images -> detect objects -> segment objects
     """
