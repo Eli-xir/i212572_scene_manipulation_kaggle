@@ -102,7 +102,7 @@ def load_images(image_sources):
         images.append(img)
     return images
 
-def get_yolo_detections(image: Image.Image, target_classes=None, conf_threshold=0.5):
+def get_yolo_detections(image: Image.Image, target_classes=None, conf_threshold=0.5,yolo = YOLO('yolo8n.pt')):
     """
     Get YOLO detections for an image.
     Args:
@@ -133,7 +133,7 @@ def get_yolo_detections(image: Image.Image, target_classes=None, conf_threshold=
     
     return detections
 
-def segment_objects(image: Image.Image, detections):
+def segment_objects(image: Image.Image, detections,predictor = None):
     """
     Generate SAM masks for detected objects.
     Args:
@@ -168,7 +168,7 @@ def segment_objects(image: Image.Image, detections):
     
     return results
 
-def process_images(image_sources, target_classes=None, conf_threshold=0.5):
+def process_images(image_sources, target_classes=None, conf_threshold=0.5,predictor = None,yolo = YOLO('yolo8n.pt')):
     """
     Full pipeline: load images -> detect objects -> segment objects
     """
@@ -179,11 +179,11 @@ def process_images(image_sources, target_classes=None, conf_threshold=0.5):
         print(f"Processing image {i+1}/{len(images)}")
         
         # Get YOLO detections
-        detections = get_yolo_detections(image, target_classes, conf_threshold)
+        detections = get_yolo_detections(image, target_classes, conf_threshold,yolo)
         print(f"Found {len(detections)} objects")
         
         # Generate SAM masks
-        segmentation_results = segment_objects(image, detections)
+        segmentation_results = segment_objects(image, detections,predictor)
         
         all_results.append({
             'image': image,
