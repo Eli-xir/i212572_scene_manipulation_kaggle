@@ -1,0 +1,27 @@
+torch
+torchvision
+
+#Libraries for hugging face models that we will be using in this project.
+transformers
+diffusers
+accelerate
+
+#Libraries needed for image processing and data handling to run model pipelines.
+numpy
+Pillow
+scikit-image
+
+#To process text
+spacy
+
+# Object Segmentation
+segment-anything
+
+# For creating a simple web demo (optional but good for presentation)
+fastapi
+uvicorn
+# Used for tunneling as we would wan't to see our model performance directly on kaggle, kaggle doesn't allow direct server hosting.
+pyngrok
+
+# Plotting and Visualization
+matplotlib
