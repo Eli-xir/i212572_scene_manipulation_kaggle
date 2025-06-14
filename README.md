@@ -22,8 +22,7 @@ The system combines YOLOv8 (object detection), SAM (segmentation), Stable Diffus
 
 1. Go to [Kaggle](https://www.kaggle.com) and create a new Notebook
 2. In **Notebook Settings**, enable **GPU (T4 x2)**
-3. Install dependencies inside your notebook
-4. Download dataset with:
+3. Download dataset with:
 
 ```python
 import kagglehub
@@ -32,8 +31,8 @@ print("Dataset path:", path)
 
 ```
 
-5. Import the given kaggle notebook to your current session state.
-6. Click **Run All** and wait for model downloads (5–10 minutes on first run)
+4. Import the given kaggle notebook to your current session state.
+5. Click **Run All** and wait for model downloads (5–10 minutes on first run)
 
 ---
 
