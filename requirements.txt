@@ -10,6 +10,7 @@ accelerate
 numpy
 Pillow
 scikit-image
+opencv-python
 
 #To process text
 spacy
@@ -25,3 +26,6 @@ pyngrok
 
 # Plotting and Visualization
 matplotlib
+
+# Yolo for bounding box generation for sam model.
+ultralytics>=8.0.20
